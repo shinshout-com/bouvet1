@@ -38,3 +38,23 @@ The pipeline follows a modern lakehouse pattern using Delta Lake on Databricks:
 ├── notebook/
 │   └── weather_power_pipeline.py     # Main end-to-end Databricks notebook
 ├── README.md                         # Project documentation
+```
+
+---
+
+## Orchestration & Scheduling
+- In production, this notebook would be converted into a Databricks Workflow, scheduled via cron at a desired interval; configured with automatic retries and task dependencies
+
+---
+
+## Monitoring & Alerting
+- Implementing Databricks SQL alerts or webhooks to a desired service (Slack/Teams/Etc.); triggered on failed API responses (!=200), if execution fails or if data quality checks result in zero rows passing into Silver
+
+---
+
+## Unity Catalog
+- Goverened using Unity Catalog's three-level namespace (catalog.schema.table), providing automatic column-level data lineage tracking and fine-grained access policies per workspace group
+
+## AI Usage
+- Fully leveraged AI (Gemini) as an active collaborator and tutor to scaffold PySpark syntax, handle API schema parsing details; structuring the pipeline rapidly, while maintaining strict oversight and full comprehension of every architectural choice and trade-off.
+
